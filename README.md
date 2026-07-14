@@ -11,7 +11,7 @@ None of this is a framework. It's a set of files you copy into your repo and ada
 ## What's inside
 
 | Path | What it is |
-|---|---|
+| --- | --- |
 | [`docs/principles.md`](docs/principles.md) | The seven principles the harness is built on — with the reasoning |
 | [`docs/session-anatomy.md`](docs/session-anatomy.md) | One feature, end to end: spec → decomposition → agent sessions → gates → merge |
 | [`claude-md/CLAUDE.md.annotated`](claude-md/CLAUDE.md.annotated) | An annotated `CLAUDE.md` template — what each section is *for*, with a real public example linked |
