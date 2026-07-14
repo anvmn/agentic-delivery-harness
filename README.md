@@ -2,6 +2,8 @@
 
 **A production-grade harness for shipping real software through AI agents — extracted from a year of doing exactly that.**
 
+![The gates in action: a failing verify blocks the commit; the fix turns it green; the trailer stays on](docs/demo.gif)
+
 I'm a tech lead at a small agency. Since February 2026, essentially all production code I ship is written by agents (Claude Code) under my direction: **~600 Claude-co-authored commits and 112 agent-built pull requests merged in five months** to a production digital-health platform used in rural Rwanda and Burundi — a registered [Digital Public Good](https://www.digitalpublicgoods.net/) — at roughly **4× my pre-agentic output**. The commit history is public: [github.com/anvmn](https://github.com/anvmn).
 
 That throughput is not the interesting part. The interesting part is that the quality bar didn't move: same review standards, same E2E coverage, same production incident rate as before. This repo is the *how* — the harness of specs, gates, conventions, and runbooks that makes agent output safe to merge.
