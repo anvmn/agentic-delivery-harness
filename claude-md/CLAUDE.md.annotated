@@ -1,0 +1,105 @@
+# CLAUDE.md — annotated template
+
+<!--
+  This is a template for the CLAUDE.md file at your repo root: the onboarding
+  document Claude Code (and any agent) reads at session start.
+
+  HTML comments like this one are annotations explaining what each section is
+  FOR — delete them when adapting. Everything else is skeleton to fill in.
+
+  The one test for every line you keep: "has its absence ever caused a bad
+  diff?" If not, cut it. Context files get skimmed when bloated — by agents
+  and humans alike.
+
+  A real, production example of this structure (public):
+  https://github.com/TIP-Global-Health/eheza-app/blob/main/CLAUDE.md
+-->
+
+# CLAUDE.md
+
+This file provides guidance to Claude Code when working with code in this repository.
+
+## Project Overview
+
+<!--
+  3–8 lines. What the system IS, for whom, and the stack — including the dev
+  container story, because it changes every command the agent will run.
+-->
+
+{One-paragraph description: what the app does, who uses it, why correctness matters.}
+
+- **Frontend:** {framework + version + directory}
+- **Backend:** {framework + version + directory}
+- **Database:** {engine}
+- **Dev environment:** {e.g. DDEV/Docker — if commands must run inside a container, SAY SO}
+- **Hosting:** {platform}
+
+## Build & Dev Commands
+
+<!--
+  THE most-used section — the agent runs these dozens of times per session.
+  Copy-paste correct, including container prefixes. Group by area. Include the
+  one-time local setup at the end, not the beginning (it's needed once).
+-->
+
+```bash
+{start the dev environment}
+{build / watch}
+{run unit tests}
+{run lint / format check — and the auto-fix variant}
+{run E2E tests — plus the recorded/headed variant if you have one}
+{deploy — or point to the skill/runbook that owns deployment}
+```
+
+## Architecture
+
+<!--
+  A MAP, not a novel: where things live, which module owns what, where the
+  entry points are. The goal is that the agent reads the right five files
+  instead of grepping the world. Deep-dive knowledge belongs in skills'
+  references/ files, not here.
+-->
+
+### {Area 1 — e.g. Frontend} — `{path}`
+
+- `{path}` — {what lives here}
+- `{path}` — {what lives here}
+
+### {Area 2 — e.g. Backend} — `{path}`
+
+- `{path}` — {what lives here}
+
+### {Cross-cutting concern — e.g. data sync, feature flags}
+
+{2–4 lines on how it works and the one command that controls it.}
+
+## Code Conventions
+
+<!--
+  ONLY the rules a reviewer would actually flag — the ones that bite. Each
+  convention: what to do, and (in one clause) why, so the agent can apply it
+  to unforeseen cases. Aim for 3–7 conventions, not 30.
+
+  Real examples of the genre (from the linked production file):
+  - "Union type variants, case branches, and pattern matches must be in
+    alphabetical order" — mechanical, reviewable, prevents merge noise.
+  - "When a translation would be identical to English, leave it as Nothing —
+    it falls back at runtime" — encodes a runtime behavior the agent can't
+    guess from types.
+  - "Do not include Debug.log calls in commits."
+  - "Always append [ci skip] to commit messages unless asked to run CI" —
+    saves a paid CI run per WIP commit.
+-->
+
+### {Convention 1}
+
+{Rule + one-clause why.}
+
+### Commit Messages
+
+{Your commit message convention. Recommended: keep agent co-author trailers on —
+they're your audit trail. See the harness's principles doc for why.}
+
+### Files to Never Commit
+
+{Generated/local files that must stay out of commits, e.g. local env configs.}
