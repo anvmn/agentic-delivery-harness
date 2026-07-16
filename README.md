@@ -35,6 +35,10 @@ None of this is a framework. It's a set of files you copy into your repo and ada
 
 Full reasoning in [`docs/principles.md`](docs/principles.md).
 
+## The measurement layer
+
+The harness's sibling repo, [agentic-delivery-evals](https://github.com/anvmn/agentic-delivery-evals), measures what this process produces: coding evals for agentic Drupal and Elm work, graded by the same verify contract — including the first legacy-stack (Drupal 7) agent benchmark and its first finding.
+
 ## Adopting this in your repo (30 minutes)
 
 1. Copy `claude-md/CLAUDE.md.annotated` to your repo root as `CLAUDE.md`, delete the annotations, fill in the real commands and the three conventions that most often bite reviewers in *your* codebase.
